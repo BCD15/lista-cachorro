@@ -41,8 +41,8 @@ export default function App() {
   return (
     <ScrollView>
       <View style={styles.container}>
-        <Text style={{ fontSize: 25}}>
-        Olá Mundo
+        <Text style={{ paddingBottom: 10, color: '#ACEBF2', fontSize: 25}}>
+        Cachorrinhos
         </Text>
         <View style={styles.conteudo}>
         { cachorros.map(cachorro => 
