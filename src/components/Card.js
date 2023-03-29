@@ -1,17 +1,21 @@
-import { View, Text, StyleSheet, Image } from 'react-native';
+import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
 
 export default function Card(props) {
+
   return (
     <View style={styles.card}>
-        <Image style={styles.foto} source={{ uri: props.cachorro.imgcachorro}} />  
-        <Text style={{ color: 'darkred'}}> {props.cachorro.raça} </Text>
+      <Image style={styles.foto} source={{ uri: props.cachorro.imgcachorro}} />  
+      <Text style={{ color: 'darkred'}}> {props.cachorro.raça} </Text>     
+      <TouchableOpacity onPress={props.removerItem} style={styles.botao}>
+        <Text style={{ color: "white", fontWeight: "bold" }}>Delete</Text>
+      </TouchableOpacity>    
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   card: {
-    backgroundColor: 'orange',
+    backgroundColor: '#34B1BF',
     width: '40%',
     height: 215,
     borderRadius: 10,
@@ -21,5 +25,12 @@ const styles = StyleSheet.create({
     resizeMode: 'stretch',
     width: '100%',
     height: 180,
-  }
+  },
+  botao: {
+    backgroundColor: '#2C2628',
+    paddingVertical: 10,
+    paddingHorizontal: 20,
+    borderRadius: 5,
+    margin: 10,
+  },
 });     

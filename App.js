@@ -1,9 +1,10 @@
 import { StyleSheet, View, Text, ScrollView } from 'react-native';
 import Card from './src/components/Card';
+import React from 'react';
 
 export default function App() {
 
-  const cachorros = [
+  const [cachorros, setCachorros] = React.useState([
     {
       id: 1,
       imgcachorro: "https://img.freepik.com/fotos-gratis/jovem-bulldog-frances-marrom-brincando-isolado-na-parede-branca-do-estudio_155003-31898.jpg?w=2000",
@@ -29,7 +30,13 @@ export default function App() {
       imgcachorro: "https://i0.statig.com.br/bancodeimagens/imgalta/0c/bj/hf/0cbjhfoofdbpjv3fgfbdr7sgt.jpg",
       raça: 'Yorkshire',
     },
-  ]
+  ]);
+  const removerItem = (id) => {
+    const index = cachorros.findIndex((filme) => filme.id === id);
+    const novaLista = [...cachorros];
+    novaLista.splice(index, 1);
+    setCachorros(novaLista);
+  };
 
   return (
     <ScrollView>
@@ -38,7 +45,13 @@ export default function App() {
         Olá Mundo
         </Text>
         <View style={styles.conteudo}>
-        { cachorros.map(cachorro => <Card cachorro={cachorro} key={cachorros.id} />)}
+        { cachorros.map(cachorro => 
+          <Card 
+          cachorro={cachorro}
+          removerItem={() => removerItem(cachorro.id)} 
+          key={cachorros.id} 
+          />
+        )}
         </View>
       </View>
     </ScrollView>
@@ -48,14 +61,14 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#0d0',
+    backgroundColor: '#496773',
     alignItems: 'center',
     justifyContent: 'center',
     paddingTop: 20,
   },
   conteudo: {
     flex: 1,
-    backgroundColor: '#ccc',
+    backgroundColor: '#30A5BF',
     flexDirection: 'row',
     flexWrap: 'wrap',
     width: '100%',
