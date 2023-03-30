@@ -5,7 +5,8 @@ export default function Card(props) {
   return (
     <View style={styles.card}>
       <Image style={styles.foto} source={{ uri: props.cachorro.imgcachorro}} />  
-      <Text style={{ color: '#2C2628'}}> {props.cachorro.raça} </Text>     
+      <Text style={{ color: '#2C2628'}}> {props.cachorro.raça} </Text>
+      <Text style={{ color: '#2C2628'}}> {props.cachorro.origem} </Text>     
       <TouchableOpacity onPress={props.removerItem} style={styles.botao}>
         <Text style={{ color: "#ACEBF2", fontWeight: "bold" }}>Delete</Text>
       </TouchableOpacity>    
@@ -24,7 +25,7 @@ const styles = StyleSheet.create({
   foto: {
     resizeMode: 'stretch',
     width: '100%',
-    height: 180,
+    height: 120,
     borderRadius: 10,
   },
   botao: {

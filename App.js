@@ -8,27 +8,32 @@ export default function App() {
     {
       id: 1,
       imgcachorro: "https://img.freepik.com/fotos-gratis/jovem-bulldog-frances-marrom-brincando-isolado-na-parede-branca-do-estudio_155003-31898.jpg?w=2000",
-      raça: 'Bulldog', 
+      raça: 'Bulldog',
+      origem: 'Inglaterra',
     },
     {
       id: 2,
       imgcachorro: "https://www.petlove.com.br/images/breeds/193103/profile/original/pastor_alemao-p.jpg?1532539270",
       raça: 'Pastor Alemão',
+      origem: 'Alemanha',
     },
     {
       id: 3,
       imgcachorro: "https://webcachorros.com.br/wp-content/uploads/2021/03/happy-brown-pitbull-dog-with-white-background_297978-1.jpg",
       raça: 'Pitbull',
+      origem: 'Estados Unidos',
     },
     {
       id: 4,
       imgcachorro: "https://uploads.metropoles.com/wp-content/uploads/2019/11/12180309/shihtzu.jpg",
-      raça: 'Shitzu',
+      raça: 'Shih-tzu',
+      origem: 'Tibete',
     },
     {
       id: 5,
       imgcachorro: "https://i0.statig.com.br/bancodeimagens/imgalta/0c/bj/hf/0cbjhfoofdbpjv3fgfbdr7sgt.jpg",
       raça: 'Yorkshire',
+      origem: 'Inglaterra',
     },
   ]);
   const removerItem = (id) => {
